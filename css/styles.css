@@ -284,46 +284,16 @@ section { padding: 96px 0; }
 
 .hero-visual .visual-frame {
   width: 100%;
-  aspect-ratio: 4 / 3;
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
   border: 1px solid rgba(255,255,255,0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
 
-.hero-visual .visual-frame::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(47,111,173,0.45), transparent 45%),
-    radial-gradient(circle at 80% 80%, rgba(184,135,43,0.35), transparent 45%);
-}
-
-.hero-visual .visual-icon {
-  position: relative;
-  z-index: 1;
-  width: 96px;
-  height: 96px;
-  opacity: 0.9;
-}
-
-.hero-visual .visual-caption {
-  position: absolute;
-  bottom: 18px;
-  left: 18px;
-  right: 18px;
-  z-index: 1;
-  font-size: 0.8rem;
-  color: #dbe6f0;
-  background: rgba(11, 31, 51, 0.35);
-  padding: 8px 12px;
-  border-radius: 8px;
-  backdrop-filter: blur(2px);
+.hero-visual .visual-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ---------- Quiénes somos ---------- */
