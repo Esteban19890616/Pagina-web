@@ -1,0 +1,318 @@
+/* =========================================================
+   SER INTEGRAL CONSULTORÍA S.A.S — Portal de Aplicativos
+   Comparte la identidad visual del sitio principal.
+   ========================================================= */
+
+:root {
+  --primary: #14324f;
+  --primary-dark: #0b1f33;
+  --secondary: #2f6fad;
+  --accent: #b8872b;
+  --accent-dark: #96701f;
+  --background: #f6f8fb;
+  --surface: #ffffff;
+  --surface-alt: #eef2f7;
+  --text: #1c2530;
+  --text-light: #5b6b7c;
+  --border: #dfe6ee;
+  --success: #1f8a4c;
+  --muted: #98a5b3;
+
+  --font-heading: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+  --radius: 10px;
+  --shadow-sm: 0 2px 8px rgba(11, 31, 51, 0.08);
+  --shadow-md: 0 8px 24px rgba(11, 31, 51, 0.12);
+  --shadow-lg: 0 16px 40px rgba(11, 31, 51, 0.16);
+  --transition: 0.25s ease;
+}
+
+* , *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+p { margin: 0 0 1em; color: var(--text-light); }
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--surface);
+  box-shadow: 0 1px 0 rgba(11, 31, 51, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+  gap: 16px;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand img { height: 44px; width: auto; }
+.brand .brand-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+.brand .brand-name span { display: block; font-size: 0.72rem; color: var(--text-light); font-weight: 500; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary);
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+.back-link:hover { background: var(--surface-alt); }
+
+/* ---------- Hub hero ---------- */
+.hub-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  padding: 72px 0 56px;
+  text-align: center;
+}
+
+.hub-hero .eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #cfe0f0;
+  margin-bottom: 16px;
+}
+
+.hub-hero h1 {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 14px;
+}
+
+.hub-hero p {
+  color: #dbe6f0;
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.hub-hero .hub-stats {
+  margin-top: 28px;
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hub-stat-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  color: #e4edf5;
+}
+
+.hub-stat-pill strong { color: #fff; }
+
+/* ---------- Apps grid ---------- */
+.hub-apps { padding: 56px 0 96px; }
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.app-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  opacity: 0;
+  transform: translateY(16px);
+  animation: app-card-in 0.5s ease forwards;
+}
+
+@keyframes app-card-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.app-card.is-available:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.app-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.app-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--surface-alt);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.app-card.is-coming-soon .app-icon { color: var(--muted); }
+
+.app-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.app-status.available { background: rgba(31, 138, 76, 0.12); color: var(--success); }
+.app-status.coming-soon { background: var(--surface-alt); color: var(--muted); }
+
+.app-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.app-card p { font-size: 0.9rem; flex: 1; margin-bottom: 20px; }
+
+.app-card .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+  width: 100%;
+}
+
+.app-card.is-available .btn {
+  background: var(--primary);
+  color: #fff;
+}
+.app-card.is-available .btn:hover { background: var(--primary-dark); }
+
+.app-card.is-coming-soon {
+  background: var(--surface-alt);
+}
+
+.app-card.is-coming-soon .btn {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 20px);
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 1000;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- WhatsApp flotante ---------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 900;
+  transition: transform var(--transition);
+}
+.whatsapp-float:hover { transform: scale(1.08); }
+.whatsapp-float svg { width: 28px; height: 28px; color: #fff; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--primary-dark);
+  color: #b7c4d1;
+  padding: 32px 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.site-footer a { color: var(--accent); font-weight: 600; }
+.site-footer a:hover { text-decoration: underline; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .header-inner { height: auto; padding: 16px 0; flex-wrap: wrap; gap: 12px; }
+  .hub-hero { padding: 56px 0 40px; }
+  .hub-apps { padding: 40px 0 64px; }
+  .apps-grid { grid-template-columns: 1fr; }
+  .whatsapp-float { right: 20px; bottom: 20px; }
+}
