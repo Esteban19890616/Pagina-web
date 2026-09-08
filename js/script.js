@@ -8,7 +8,7 @@
    ------------------------------------------------------- */
 const CONFIG = {
   // URL del aplicativo de inventarios (subdominio del hosting).
-  inventoryAppUrl: "https://inventarios.serintegral.com.co",
+  inventoryAppUrl: "https://aplicativos.serintegral.com.co",
 
   // Número de WhatsApp de la empresa, formato internacional sin "+" ni espacios.
   whatsappNumber: "573015743688",
